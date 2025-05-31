@@ -34,7 +34,7 @@ pipeline{
         stage('upload jar to AWS'){
             steps{
                 script{                    
-                    withAWS(credentials: 'AKIAQXUIXTDX4ZAXV2L5', region: 'eu-west-1') {
+                    withAWS(credentials: 'my-cba-aws-credential', region: 'eu-west-1') {
                         sh '''echo "Uploading the tested jar file to s3 for later deployments" '''
                         s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'maven_project/target/my-app-1.0-SNAPSHOT.jar', bucket:'cba-050752624879', path:'ci-demo/javaapp/myapp.jar')
                     }
