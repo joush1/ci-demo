@@ -1,2 +1,3 @@
 Hi, this is a  sample file
 hi ...Joush
+Today is Thursday...
