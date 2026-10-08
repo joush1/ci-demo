@@ -36,7 +36,7 @@ pipeline{
                 script{                    
                     withAWS(credentials: 'my-cba-aws-credential', region: 'eu-west-2') {
                         sh '''echo "Uploading the tested jar file to s3 for later deployments" '''
-                        s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'maven_project/target/my-app-1.0-SNAPSHOT.jar', bucket:'document.jo', path:'ci-demo/javaapp/myapp.jar')
+                        s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'maven_project/target/my-app-1.0-SNAPSHOT.jar', bucket:'document-jo', path:'ci-demo/javaapp/myapp.jar')
                     }
                 }
             }
